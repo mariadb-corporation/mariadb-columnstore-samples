@@ -30,7 +30,7 @@ This includes the following 3 tables:
 
 The airlines and airports table will also be populated from the airlines.csv and airports.csv files in the schema directory.
 
-The flights table is populated separately using a separate script which will load each CSV file from the data directory into the flights table:
+The flights table is populated using a separate script which will load each CSV file from the data directory into the flights table:
 ```
 $ ./load_flight_data.sh
 ```
