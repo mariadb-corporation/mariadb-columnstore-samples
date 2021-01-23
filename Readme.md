@@ -1,5 +1,5 @@
 # Flights Sample Data
-This simple data set uses the [on time performance](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time) dataset from the *Bureau of Transportation Statistics (BTS)* for US based flights.
+This simple data set uses the [on time performance](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time) dataset from the *Bureau of Transportation Statistics (BTS)* for US based commercial airline flights.
 
 ## Retrieve Data
 The following script will retrieve the data set by year and month creating CSV data files under the data directory. By default the script will retrieve data for all months in 2020. The script can be edited to retrieve smaller or larger data ranges as needed. The script makes use of curl and unzip which may need to be installed if not already present on your Linux OS:
