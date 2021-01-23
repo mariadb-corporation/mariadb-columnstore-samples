@@ -1,7 +1,7 @@
-SELECT `airline`,
-       `year`,
-       `delay_type`,
-       `delay`
+SELECT `q`.`airline`,
+       `q`.`year`,
+       `q`.`delay_type`,
+       `q`.`delay`
 FROM   (SELECT `a`.`airline`,
                `f`.`year`,
                'Airline Delay' AS `delay_type`,
@@ -44,7 +44,7 @@ FROM   (SELECT `a`.`airline`,
                  ON `f`.`carrier` = `a`.`iata_code`
         WHERE  `f`.`weather_delay` > 0
         GROUP  BY `a`.`airline`,
-                  `f`.`year`) AS `t`
+                  `f`.`year`) AS `q`
 ORDER  BY 1,
           2,
           3;

@@ -11,6 +11,6 @@ FROM     (
                   FROM     `flights` `f`
                   JOIN     `airlines` `a`
                   ON       `f`.`carrier` = `a`.`iata_code`
-                  WHERE    `f`.`year` = 2018
+                  WHERE    `f`.`year` = 2020
                   GROUP BY `a`.`airline` ) AS `q`
 ORDER BY `flight_count` DESC;
