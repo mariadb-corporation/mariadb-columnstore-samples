@@ -1,10 +1,11 @@
 # Flights Sample Data
-This simple data set uses the US Department of Transporation [on time performance](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time) dataset for US based flights.
+This simple data set uses the US Department of Transportation [on time performance](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time) dataset for US based flights.
 
 ## Retrieve Data
 The following script will retrieve the data set by year and month creating CSV data files under the data directory. By default the script will retrieve data for all months in 2020. The script can be edited to retrieve smaller or larger data ranges as needed. The script makes use of curl and unzip which may need to be installed if not already present on your Linux OS:
 ```
 $ ./get_flight_data.sh
+
 2020-01
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -14,6 +15,7 @@ Archive:  data.zip
   inflating: 544122566_.csv
 2020-02
 ...
+
 ```
 
 ## Creating and Loading Database
@@ -29,7 +31,7 @@ This includes the following 3 tables:
 
 The airlines and airports table will also be populated from the airlines.csv and airports.csv files in the schema directory.
 
-The flights table is populated seperately using a seperate script which will load each CSV file from the data directory into the flights table:
+The flights table is populated separately using a separate script which will load each CSV file from the data directory into the flights table:
 ```
 $ ./load_flight_data.sh
 ```
