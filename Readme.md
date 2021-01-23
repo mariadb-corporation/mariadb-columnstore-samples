@@ -6,14 +6,13 @@ The following script will retrieve the data set by year and month creating CSV d
 ```
 $ ./get_flight_data.sh
 
-2020-01
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   654  100   183  100   471     12     33  0:00:15  0:00:14  0:00:01     0
-100 14.9M  100 14.9M    0     0   415k      0  0:00:36  0:00:36 --:--:--  736k
+Downloading data for 2020-01
+###################################################################################################### 100.0%
+###################################################################################################### 100.0%
+Unzipping data for 2020-01
 Archive:  data.zip
-  inflating: 544122566_.csv
-2020-02
+  inflating: 445515905_.csv
+
 ...
 
 ```
