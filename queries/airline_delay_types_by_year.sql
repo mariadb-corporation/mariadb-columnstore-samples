@@ -1,50 +1,50 @@
-SELECT airline,
-       year,
-       delay_type,
-       delay
-FROM   (SELECT a.airline,
-               f.year,
-               "airline delay" delay_type,
-               Count(*)        delay
-        FROM   flights f
-               JOIN airlines a
-                 ON f.carrier = a.iata_code
-        WHERE  f.carrier_delay > 0
-        GROUP  BY a.airline,
-                  f.year
+SELECT `airline`,
+       `year`,
+       `delay_type`,
+       `delay`
+FROM   (SELECT `a`.`airline`,
+               `f`.`year`,
+               'Airline Delay' AS `delay_type`,
+               COUNT(*)        AS `delay`
+        FROM   `flights` `f`
+               JOIN `airlines` `a`
+                 ON `f`.`carrier` = `a`.`iata_code`
+        WHERE  `f`.`carrier_delay` > 0
+        GROUP  BY `a`.`airline`,
+                  `f`.`year`
         UNION ALL
-        SELECT a.airline,
-               f.year,
-               "late aircraft delay" delay_type,
-               Count(*)              delay
-        FROM   flights f
-               JOIN airlines a
-                 ON f.carrier = a.iata_code
-        WHERE  f.late_aircraft_delay > 0
-        GROUP  BY a.airline,
-                  f.year
+        SELECT `a`.`airline`,
+               `f`.`year`,
+               'Late Aircraft Delay' AS `delay_type`,
+               COUNT(*)              AS `delay`
+        FROM   `flights` `f`
+               JOIN `airlines` `a`
+                 ON `f`.`carrier` = `a`.`iata_code`
+        WHERE  `f`.`late_aircraft_delay` > 0
+        GROUP  BY `a`.`airline`,
+                  `f`.`year`
         UNION ALL
-        SELECT a.airline,
-               f.year,
-               "air system delay" delay_type,
-               Count(*)           delay
-        FROM   flights f
-               JOIN airlines a
-                 ON f.carrier = a.iata_code
-        WHERE  f.nas_delay > 0
-        GROUP  BY a.airline,
-                  f.year
+        SELECT `a`.`airline`,
+               `f`.`year`,
+               'Air System Delay' AS `delay_type`,
+               COUNT(*)           AS `delay`
+        FROM   `flights` `f`
+               JOIN `airlines` `a`
+                 ON `f`.`carrier` = `a`.`iata_code`
+        WHERE  `f`.`nas_delay` > 0
+        GROUP  BY `a`.`airline`,
+                  `f`.`year`
         UNION ALL
-        SELECT a.airline,
-               f.year,
-               "weather delay" delay_type,
-               Count(*)        delay
-        FROM   flights f
-               JOIN airlines a
-                 ON f.carrier = a.iata_code
-        WHERE  f.weather_delay > 0
-        GROUP  BY a.airline,
-                  f.year) t
+        SELECT `a`.`airline`,
+               `f`.`year`,
+               'Weather Delay' `delay_type`,
+               COUNT(*)        AS `delay`
+        FROM   `flights` `f`
+               JOIN `airlines` `a`
+                 ON `f`.`carrier` = `a`.`iata_code`
+        WHERE  `f`.`weather_delay` > 0
+        GROUP  BY `a`.`airline`,
+                  `f`.`year`) AS `t`
 ORDER  BY 1,
           2,
           3;
