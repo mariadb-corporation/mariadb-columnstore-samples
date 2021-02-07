@@ -5,7 +5,7 @@
 # for the specific columns listed in the SQL and utilized by the sample schema.
 
 mkdir -p data
-for y in {2020..2021}; do
+for y in {2019..2021}; do
   for m in {1..12}; do
     yyyymm="$y-$(printf %02d $m)"
     echo "Downloading data for $yyyymm"
